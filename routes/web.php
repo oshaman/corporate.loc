@@ -28,6 +28,16 @@ Route::resource('portfolios','PortfolioController',[
 													
 													]);
 
+Route::resource('articles','ArticlesController',[
+												
+												'parametres'=>[
+												
+													'articles' => 'alias'
+												
+												]
+												
+												]);                                                    
+                                                    
 /* Route::get('/', function () {
     return view('welcome');
 });
