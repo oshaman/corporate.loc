@@ -1,5 +1,6 @@
 /node_modules
-/public/storage
+/public
+/storage
 /storage/*.key
 /vendor
 /.idea
@@ -14,4 +15,3 @@ package.json
 phpunit.xml
 readme.md
 server.php
-/public
