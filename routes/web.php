@@ -36,7 +36,11 @@ Route::resource('articles','ArticlesController',[
 												
 												]
 												
-												]);                                                    
+												]);
+
+Route::get('articles/cat/{cat_alias?}',['uses'=>'ArticleController@index','as'=>'articlesCat']);
+
+                                                
                                                     
 /* Route::get('/', function () {
     return view('welcome');
