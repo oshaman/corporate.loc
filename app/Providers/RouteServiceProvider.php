@@ -23,8 +23,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
+        
+		Route::pattern('alias','[\w-]+');
+		
         parent::boot();
     }
 
