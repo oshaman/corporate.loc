@@ -1,5 +1,6 @@
 <?php
 namespace Corp\Http\Controllers\Auth;
+
 use Corp\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -23,7 +24,7 @@ class AuthController extends Controller
      */
     protected $loginView;
      
-    protected $username = 'login';
+    // protected $username = 'login';
      
      
     protected $redirectTo = '/admin';

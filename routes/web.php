@@ -45,11 +45,20 @@ Route::resource('comment','CommentController',['only'=>['store']]);
 Route::match(['get','post'],'/contacts',['uses'=>'ContactsController@index','as'=>'contacts']);
 
 //php artisan make:auth
-Route::get('login','Auth\AuthController@showLoginForm');
+Route::get('login',['uses'=>'Auth\AuthController@showLoginForm', 'as' => 'login']);
 
 Route::post('login','Auth\AuthController@login');
 
 Route::get('logout','Auth\AuthController@logout');
+//admin
+Route::group(['prefix' => 'admin','middleware'=> 'auth'],function() {
+	
+	//admin
+	Route::get('/',['uses' => 'Admin\IndexController@index','as' => 'adminIndex']);
+	
+	Route::resource('articles','Admin\ArticlesController');
+	
+}); 
 
 																						
                                                     
