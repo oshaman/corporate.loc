@@ -17,13 +17,19 @@ class AuthServiceProvider extends ServiceProvider
     ];
 
     /**
-     * Register any authentication / authorization services.
+     * Register any application authentication / authorization services.
      *
+     * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
      * @return void
      */
     public function boot()
     {
         $this->registerPolicies();
+        
+        
+        Gate::define('VIEW_ADMIN', function ($user) {
+        	return $user->canDo('VIEW_ADMIN', FALSE);
+        });
 
         //
     }
