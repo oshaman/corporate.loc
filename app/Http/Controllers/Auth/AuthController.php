@@ -1,42 +1,55 @@
 <?php
-
 namespace Corp\Http\Controllers\Auth;
-
-use Corp\User;
 use Corp\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class RegisterController extends Controller
+class AuthController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Register Controller
+    | Login Controller
     |--------------------------------------------------------------------------
     |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
     |
     */
-
-    use RegistersUsers;
-
+    use AuthenticatesUsers;
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $loginView;
+     
+    protected $username = 'login';
+     
+     
+    protected $redirectTo = '/admin';
 
     /**
-     * Create a new controller instance.
+     * Create a new authentication controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['except' => 'logout']);
+        
+        $this->loginView = env('THEME').'.login';
+    }
+    
+    
+    public function showLoginForm()
+    {
+        $view = property_exists($this, 'loginView') ? $this->loginView : '';
+
+        if (view()->exists($view)) {
+            return view($view)->with('title', 'Вход на сайт');
+        }
+
+        abort(404);
     }
 
     /**
