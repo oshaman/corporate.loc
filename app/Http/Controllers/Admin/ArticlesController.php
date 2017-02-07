@@ -104,7 +104,6 @@ class ArticlesController extends AdminController
     {
         //
 		$result = $this->a_rep->addArticle($request);
-        dd($result);
 		
 		if(is_array($result) && !empty($result['error'])) {
 			return back()->with($result);
