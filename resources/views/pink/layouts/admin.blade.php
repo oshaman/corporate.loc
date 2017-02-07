@@ -56,7 +56,6 @@
                             <a href="index.html" title="Pink Rio"><img src="{{ asset(env('THEME')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
                         </div>
                         <!-- END LOGO -->
-                        
                         <div id="sidebar-header" class="group">
                             <div class="widget-first widget yit_text_quote">
                                 <blockquote class="text-quote-quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>

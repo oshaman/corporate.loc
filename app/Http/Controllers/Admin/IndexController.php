@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Corp\Http\Requests;
 use Corp\Http\Controllers\Controller;
 use Gate;
+use Auth;
 use Corp\User;
 
 class IndexController extends AdminController
@@ -16,7 +17,9 @@ class IndexController extends AdminController
     public function __construct() {
 		
 		parent::__construct();
-		if(Gate::allows('update-post')) {
+        // $user = Auth::user();
+        // dd($user);
+		if(Gate::allows('VIEW_ADMIN')) {
             abort(403);
 		}
 		
