@@ -4,6 +4,7 @@ namespace Corp\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Corp\Article;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -28,8 +29,8 @@ class RouteServiceProvider extends ServiceProvider
 		
         parent::boot();
         
-        Route::bind('articles', function ($value) {
-        	return Corp\Article::where('alias',$value)->first();
+        Route::bind('article', function ($value) {
+        	return Article::where('alias', $value)->first();
         });
     }
 
