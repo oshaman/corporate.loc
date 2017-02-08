@@ -72,6 +72,9 @@ class CommentController extends SiteController
 		
 		if($user) {
 			$comment->user_id = $user->id;
+			$comment->name = $user->name;
+			$comment->email = $user->email;
+			$comment->site = "site";
 		}
 		
 		$post = Article::find($data['article_id']);

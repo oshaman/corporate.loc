@@ -15,10 +15,16 @@ class IndexController extends AdminController
     //
     
     public function __construct() {
-		
-		parent::__construct();
-        // $user = Auth::user();
-        // dd($user);
+		/* $this->middleware(function ($request, $next) {
+            $this->user = Auth::user()->projects;
+            dd($this->user);
+            return $next($request);
+        }); */
+        
+		// parent::__construct();
+        // $this->middleware('auth');
+        // $this->user = Auth::user();
+        // dd($this->user);
 		if(Gate::allows('VIEW_ADMIN')) {
             abort(403);
 		}

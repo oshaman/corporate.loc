@@ -23,8 +23,6 @@ class Authenticate
             }
             return redirect()->guest('login');
         }
-            dd(Auth::guard($guard)->check());
-
         return $next($request);
     }
 }

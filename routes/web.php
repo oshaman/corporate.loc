@@ -29,7 +29,12 @@ Route::resource('portfolios','PortfolioController',[
 													]);
 
 Route::resource('articles','ArticlesController',[
-												
+												'names' =>
+                                                    [
+                                                        'index' => 'articless.index',
+                                                        'show' => 'articless.show'
+                                                    
+                                                    ],
 												'parameters'=>[
 												
 													'articles' => 'alias'
