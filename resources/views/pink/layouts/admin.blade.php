@@ -18,7 +18,7 @@
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/style-minifield.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/buttons.css" /> <!-- MAIN THEME STYLESHEET -->
         <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
-        <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/cache-custom.css" /> <!-- MAIN THEME STYLESHEET -->
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset(env('THEME')) }}/css/jquery-ui.css" /> <!-- MAIN THEME STYLESHEET -->
         
         
 		
@@ -29,6 +29,7 @@
         
         <!-- JAVASCRIPTs -->
         <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery.js"></script>
+        <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/jquery-ui.js"></script>
         <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="{{ asset(env('THEME')) }}/js/bootstrap-filestyle.min.js"></script>
         
@@ -56,6 +57,7 @@
                             <a href="index.html" title="Pink Rio"><img src="{{ asset(env('THEME')) }}/images/logo.png" title="Pink Rio" alt="Pink Rio" /></a>
                         </div>
                         <!-- END LOGO -->
+                        
                         <div id="sidebar-header" class="group">
                             <div class="widget-first widget yit_text_quote">
                                 <blockquote class="text-quote-quote">&#8220;The caterpillar does all the work but the butterfly gets all the publicity.&#8221;</blockquote>
