@@ -9,7 +9,7 @@ abstract class Repository {
 	protected $model = FALSE;
 	
 	
-	public function get($select = '*', $take = FALSE, $pagination = FALSE, $where = FALSE) {
+	public function get($select = '*', $take = FALSE, $pagination = FALSE, $where = FALSE, $order = FALSE) {
 		
 		$builder = $this->model->select($select);
 		
@@ -19,6 +19,10 @@ abstract class Repository {
 		
 		if($where) {
 			$builder->where($where[0], $where[1]);
+		}
+        
+        if($order) {
+			$builder->orderBy($order[0], $order[1]);
 		}
 		
 		

@@ -54,7 +54,13 @@ class ArticlesController extends SiteController
     
     public function getComments($take) {
 		
-		$comments = $this->c_rep->get(['text','name','email','site','article_id','user_id'],$take);
+		$comments = $this->c_rep->get(
+                                ['text','name','email','site','article_id','user_id'],
+                                $take,
+                                FALSE,
+                                FALSE,
+                                ['id', 'desc']
+                                );
 		
 		if($comments) {
 			$comments->load('article','user');
@@ -64,7 +70,13 @@ class ArticlesController extends SiteController
 	}
 	
 	public function getPortfolios($take) {
-		$portfolios = $this->p_rep->get(['title','text','alias','customer','img','filter_alias'],$take);
+		$portfolios = $this->p_rep->get(
+                                ['title','text','alias','customer','img','filter_alias'],
+                                $take,
+                                FALSE,
+                                FALSE,
+                                ['id', 'desc']
+                                );
 		return $portfolios;
 	}
     

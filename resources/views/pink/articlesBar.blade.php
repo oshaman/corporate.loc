@@ -32,7 +32,7 @@
                 <img alt="" src="https://www.gravatar.com/avatar/{{$hash}}?d=monsterid&s=55" class="avatar" />   
             </div>
             <span class="author"><strong><a href="#">{{ isset($comment->user) ? $comment->user->name : $comment->name}}</a></strong> in</span> 
-            <a class="title" href="{{ route('articles.show',['alias' => $comment->article->alias]) }}">{{ $comment->article->title }}</a>
+            <a class="title" href="{{ route('articless.show',['alias' => $comment->article->alias]) }}">{{ $comment->article->title }}</a>
             <p class="comment">
                 {{ $comment->text }} <a class="goto" href="{{ route('articles.show',['alias' => $comment->article->alias]) }}">&#187;</a>
             </p>
