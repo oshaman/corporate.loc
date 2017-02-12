@@ -33,8 +33,7 @@
 		<h1">Тип меню:</h1>
 		
 		<div id="accordion">
-		
-		<h3>{!! Form::radio('type', 'customLink',(isset($type) && $type == 'customLink') ? TRUE : FALSE,['class' => 'radioMenu']) !!}	
+		<h3>{!! Form::radio('type', 'customLink',((isset($type) && $type == 'customLink') || !isset($menu->id)) ? TRUE : FALSE,['class' => 'radioMenu']) !!}	
 			<span class="label">Пользовательская ссылка:</span></h3>
 			
 			<ul>
@@ -162,6 +161,17 @@
 			}
 				
 		});
+		
+		var active = 0;
+		$('#accordion input[type=radio]').each(function(ind,it) {
+			
+			if($(this).prop('checked')) {
+				active = ind;
+			}
+			
+		});
+		
+		$('#accordion').accordion('option','active', active);
 		
 	})
 	
