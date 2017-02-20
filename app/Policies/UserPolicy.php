@@ -5,7 +5,7 @@ namespace Corp\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Corp\User;
 
-class PermissionPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
@@ -18,10 +18,14 @@ class PermissionPolicy
     {
         //
     }
+	
+	public function create(User $user)
+    {
+        return $user->can('EDIT_USERS');
+    }
     
-    public function change(User $user) {
-    	
-    	//EDIT_PERMISSIONS
-		return $user->canDo('EDIT_USERS');
-	}
+    public function edit(User $user)
+    {
+        return $user->can('EDIT_USERS');
+    }
 }

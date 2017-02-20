@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'login'
     ];
 
     /**
@@ -46,7 +46,7 @@ class User extends Authenticatable
 					return FALSE;
 				}				
 			}
-			dd($require);
+			// dd($require);
 			return  $require;
 		}
 		else {
