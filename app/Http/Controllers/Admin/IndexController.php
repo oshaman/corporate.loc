@@ -30,7 +30,7 @@ class IndexController extends AdminController
 		}
 		
 		
-		$this->template = env('THEME').'.admin.index';
+		$this->template = config('settings.theme').'.admin.index';
 		
 	}
 	

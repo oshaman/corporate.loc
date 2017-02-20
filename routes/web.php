@@ -54,7 +54,7 @@ Route::get('login',['uses'=>'Auth\AuthController@showLoginForm', 'as' => 'login'
 
 Route::post('login','Auth\AuthController@login');
 
-Route::get('logout','Auth\AuthController@logout');
+Route::get('logout',['uses' => 'Auth\AuthController@logout', 'as' => 'logout']);
 //admin
 Route::group(['prefix' => 'admin','middleware'=> 'auth'],function() {
 	
